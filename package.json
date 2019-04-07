@@ -1,9 +1,9 @@
 {
-  "name": "adapterapi",
+  "name": "apiCalls",
   "version": "1.0.0",
-  "description": "An API for AdapterApp by Jeremy Osborn",
+  "description": "An API Calls for Supporter App",
   "private": true,
-  "license": "MIT",
+  "license": "codebyravi.com",
   "scripts": {
     "scriptstart": "./scripts/startup.sh",
     "start": "node ./bin/www",

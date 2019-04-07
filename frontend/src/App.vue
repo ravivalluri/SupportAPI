@@ -1,7 +1,7 @@
 <template>
   <div class="info">
     <div class="routes">
-      <h1>Adapter App API</h1>
+      <h1>Supporter App API</h1>
       <h2>Available Routes</h2>
       <p v-for="route in routes" :key="route.route" @click="setActive(route)">{{ route.route }}</p>
     </div>
@@ -12,108 +12,114 @@
 </template>
 
 <script>
-const returnBase = `['norton', 'cooke', 'library', 'carver', 'rankin']`
+const returnBase = `['willis', 'john_hancock', 'aon', 'thompson', 'bcbs']`;
 const returnBuildings = `[
   ...
   {
-    building: 'carver',
-    roomNumber: 108,
+    building: "Thompson",
+    roomNumber: 1001,
     hasHDMI: false,
-    hasVGA: true,
+    hasVGA: true
   },
   {
-    building: 'carver',
-    roomNumber: 135,
+    building: "Thompson",
+    roomNumber: 1000,
     hasHDMI: false,
-    hasVGA: true,
+    hasVGA: true
   },
   {
-    building: 'carver',
-    roomNumber: 'Ingram',
+    building: "Thompson",
+    roomNumber: "Printer",
     hasHDMI: false,
-    hasVGA: true,
+    hasVGA: true
   },
   ...
-]`
+]`;
 
 const returnRoom = `[
   {
-    building: 'carver',
-    roomNumber: 108,
+    building: "Thompson",
+    roomNumber: 1001,
     hasHDMI: false,
-    hasVGA: true,
+    hasVGA: true
   },
-]`
+]`;
 
 const returnDevices = `[
   ...
   {
-    id: 'macbook-air-2011-2014',
-    name: 'Macbook Air 2011-2014',
+    _id: "macbook-air-2015-2017",
+    name: "Macbook Air 2015-2017",
     hasHDMI: false,
     hasVGA: false,
-    adapterHDMI: 'Thunderbolt-HDMI',
-    adapterVGA: 'Thunderbolt-VGA',
-    linkHDMI: '...link...',
-    linkVGA: '...link...',
+    adapterHDMI: "Thunderbolt-HDMI",
+    adapterVGA: "Thunderbolt-VGA",
+    linkHDMI:
+      "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
+    linkVGA:
+      "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
   },
   {
-    id: 'macbook-pro-2011-2014',
-    name: 'Macbook/Macbook Pro 2011-2014',
+    _id: "macbook-pro-2017-2019",
+    name: "Macbook/Macbook Pro 2017-2019",
     hasHDMI: true,
     hasVGA: false,
-    adapterHDMI: 'Thunderbolt-HDMI',
-    adapterVGA: 'Thunderbolt-VGA',
-    linkHDMI: '...link...',
-    linkVGA: '...link...',
+    adapterHDMI: "Thunderbolt-HDMI",
+    adapterVGA: "Thunderbolt-VGA",
+    linkHDMI:
+      "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
+    linkVGA:
+      "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
   },
   ...
-]`
+]`;
 
 const returnDevice = `[
-  {
-    id: 'macbook-air-2011-2014',
-    name: 'Macbook Air 2011-2014',
-    hasHDMI: false,
+ {
+    _id: "macbook-pro-2017-2019",
+    name: "Macbook/Macbook Pro 2017-2019",
+    hasHDMI: true,
     hasVGA: false,
-    adapterHDMI: 'Thunderbolt-HDMI',
-    adapterVGA: 'Thunderbolt-VGA',
-    linkHDMI: '...link...',
-    linkVGA: '...link...',
+    adapterHDMI: "Thunderbolt-HDMI",
+    adapterVGA: "Thunderbolt-VGA",
+    linkHDMI:
+      "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
+    linkVGA:
+      "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
   },
-]`
+]`;
 
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
       routes: [
-        { route: '/', return: 'The server redirects to this endpoint.' },
-        { route: '/buildings', return: returnBase },
-        { route: '/buildings/:building', return: returnBuildings },
-        { route: '/buildings/:building/:room', return: returnRoom },
-        { route: '/devices', return: returnDevices },
-        { route: '/devices/:device', return: returnDevice },
+        { route: "/", return: "The server redirects to this endpoint." },
+        { route: "/buildings", return: returnBase },
+        { route: "/buildings/:building", return: returnBuildings },
+        { route: "/buildings/:building/:room", return: returnRoom },
+        { route: "/devices", return: returnDevices },
+        { route: "/devices/:device", return: returnDevice }
       ],
-      activeRoute: '',
-      returnVal: '',
-    }
+      activeRoute: "",
+      returnVal: ""
+    };
   },
   methods: {
     setActive(route) {
-      this.activeRoute = route.route
-      this.returnVal = route.return
-    },
-  },
-}
+      this.activeRoute = route.route;
+      this.returnVal = route.return;
+    }
+  }
+};
 </script>
 
 <style scoped>
 h1 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 h2 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 a {
   color: #00b7ff;
