@@ -2,7 +2,7 @@
 
 # Clone Repo and Install Dependencies
 
-\$ git clone https://github.com/codebyravi/apiCalls.git && cd appCalls && git install
+\$ git clone https://github.com/codebyravi/supportAPI.git && cd appCalls && git install
 
 # Starts API endpoints on port 4000, or user defined port. Navigate to localhost:4000/api
 
