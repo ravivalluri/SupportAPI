@@ -70,16 +70,3 @@ This path returns an Array of building names.
 ["willis", "john_hancock", "aon", "thompson", "bcbs"]
 ```
 
-## Configuration
-
-This application relies on a MySQL database, locally and remotely. The app at `/bin/www` calls `require('dotenv').config()`, which searches the repo for a `.env` file:
-
-```bash
-LOCAL=true
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=[your password here]
-DATABASE=apiCalls
-```
-
-`LOCAL` sets `process.env.LOCAL` to true so that the app can run in dev mode and access your local server. Make sure this file is ignored in `.gitignore` so that it doesn't get pushed to prod. When `/DataLayer/connection.js` reads the env locally, it'll find the `LOCAL` variable and access the local database. In prod, this variable will not exist and the application will grab the remote database (which you need to configure).
